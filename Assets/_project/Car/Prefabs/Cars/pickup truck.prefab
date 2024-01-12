@@ -10545,7 +10545,7 @@ GameObject:
   - component: {fileID: 2706265908927414915}
   - component: {fileID: 4315023178267391132}
   m_Layer: 0
-  m_Name: Car
+  m_Name: pickup truck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10671,27 +10671,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c6720c829559342984ad16a86b2347, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 10
-  brakeForce: 8
-  turnSpeed: 150
-  alignToGroundTime: 5
-  colliderRb: {fileID: 3219065247622615379}
-  motorRigidbody: {fileID: 8986209940263457167}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  wheels:
-  - {fileID: 2447280877896021681}
-  - {fileID: 2447280877896021683}
-  - {fileID: 2447280877896021685}
-  - {fileID: 2447280877896021687}
-  rotationSpeed: 720
-  skidMarks:
-  - {fileID: 6450185912808933587}
-  - {fileID: 5545193920804589710}
-  driftSmoke:
-  - {fileID: 1095157431268975166}
-  - {fileID: 5314635107088627442}
+  carStats: {fileID: 11400000, guid: d6b177c0cd583014fa6513e9ee18f821, type: 2}
+  carPhysics:
+    motor: {fileID: 8986209940263457167}
+    carCollider: {fileID: 3219065247622615379}
+    groundLayer:
+      serializedVersion: 2
+      m_Bits: 64
+    groundDistance: 1
+  carVisuals:
+    Wheels:
+    - {fileID: 2447280877896021681}
+    - {fileID: 2447280877896021683}
+    - {fileID: 2447280877896021685}
+    - {fileID: 2447280877896021687}
+    wheelRotationSpeed: 540
+    skidMarks:
+    - {fileID: 6450185912808933587}
+    - {fileID: 5545193920804589710}
 --- !u!114 &2706265908927414915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10713,6 +10710,9 @@ MonoBehaviour:
   houseLayer:
     serializedVersion: 2
     m_Bits: 1024
+  trashLayer:
+    serializedVersion: 2
+    m_Bits: 0
   radius: 5
   spawnPosition: {fileID: 4091865103958589214}
   spacing: 1.4

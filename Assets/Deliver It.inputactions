@@ -13,13 +13,40 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Join",
+                    "type": "Button",
+                    "id": "d7941110-5ad2-41ce-ab80-304b8fcf22f1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Accelerator",
+                    "type": "Value",
+                    "id": "1a4d5658-fb8a-4da5-a25a-b0beb9f9b6d3",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SteeringWheel",
+                    "type": "Value",
+                    "id": "9a345b36-94bc-42ad-9124-b7ee9dc509ab",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "WASD",
                     "id": "00ca640b-d935-4593-8157-c05846ea39b3",
-                    "path": "Dpad",
+                    "path": "Dpad(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -74,7 +101,7 @@
                 {
                     "name": "Arrows",
                     "id": "16558d41-9bdd-4cd3-8209-84ebe6dd09ee",
-                    "path": "Dpad",
+                    "path": "Dpad(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -129,7 +156,7 @@
                 {
                     "name": "joystick",
                     "id": "bea70a86-b113-43da-9f26-07eb5951e510",
-                    "path": "2DVector",
+                    "path": "2DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -178,6 +205,237 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "844914cc-26e9-47df-ac3b-2992f0cf807a",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "42ddd79e-e4f9-44cb-bf3f-b5cc4c983cba",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf3b7552-cc7a-47b5-897e-24c4cadfc8b2",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard2",
+                    "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "WS",
+                    "id": "aa3d96b1-5fb9-4c85-ae23-57da40e48842",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerator",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "7d4424f5-d1af-4d33-ac3a-9bc0b29a50d6",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Accelerator",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "ad0dfd25-230f-4f77-93c8-9c194f7b7a7b",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Accelerator",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "ARROWS",
+                    "id": "7f47fbcb-d7e8-4c52-b0f8-bc058dc42e83",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerator",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "1732a2c6-bc76-4027-9db0-303054e1e5d7",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard2",
+                    "action": "Accelerator",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "f7565008-e220-4c5c-8d97-d1e250fe55c2",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard2",
+                    "action": "Accelerator",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Gamepad",
+                    "id": "81810bc1-0f74-4801-948e-025fab4ff289",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Accelerator",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "d73e6691-d006-4b49-97d4-72a0914aa6fd",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Accelerator",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "5ea41d9b-4cc1-4e83-b569-eaab880b2720",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Accelerator",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "AD",
+                    "id": "d231b60e-44c0-4d63-81a9-15b7f64389af",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SteeringWheel",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "d92e4075-3d2e-48b6-bc9b-a2745107626c",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SteeringWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "35169d76-9360-4e48-80da-3787d1c303bf",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "SteeringWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "ARROWS",
+                    "id": "8142ded1-51e3-4ea3-b485-eb3a16394f7d",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SteeringWheel",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "94a5a541-7ad5-4791-bcec-a26c8e27571f",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard2",
+                    "action": "SteeringWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "8bbd45b2-d0bd-4dd8-9d55-04c75e953c43",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard2",
+                    "action": "SteeringWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Gamepad",
+                    "id": "4801651a-e4b2-4d40-b95e-64403b324768",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SteeringWheel",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "50e9b022-9b8f-4a1d-af98-2c119834d376",
+                    "path": "<Gamepad>/leftStick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "SteeringWheel",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "c31db316-6e62-4163-bd82-7d1f5eb69c1c",
+                    "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "SteeringWheel",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

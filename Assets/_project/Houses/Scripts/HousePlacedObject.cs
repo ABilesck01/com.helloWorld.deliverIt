@@ -15,6 +15,31 @@ public class HousePlacedObject : PlacedObject
 
     public bool HasTask() => hasTask;
 
+    private void OnEnable()
+    {
+        GameManager.OnLostTask += GameManager_OnLostTask;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnLostTask -= GameManager_OnLostTask;
+    }
+
+    private void GameManager_OnLostTask(object sender, Task e)
+    {
+        if (!hasTask)
+        {
+            return;
+        }
+
+        if(task.House.Equals(this))
+        {
+            hasTask = false;
+            task = null;
+            taskInidcator.SetActive(false);
+        }
+    }
+
     public void AsignTask(Task task)
     {
         hasTask = true;

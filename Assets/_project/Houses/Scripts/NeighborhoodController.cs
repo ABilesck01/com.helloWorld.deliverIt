@@ -7,14 +7,17 @@ public class NeighborhoodController : MonoBehaviour
 {
     [SerializeField] private float timeToSpawn;
     [SerializeField] private int initialBuildings;
+    [SerializeField] private BlockData blockData;
     [Space]
     [SerializeField] private BlockController[] blocks;
 
     private float currentTimeToSpawn = 0;
 
-    private List<StorePlacedObject> stores = new List<StorePlacedObject>();
-    private List<HousePlacedObject> houses = new List<HousePlacedObject>();
+    [SerializeField] private List<StorePlacedObject> stores = new List<StorePlacedObject>();
+    [SerializeField] private List<HousePlacedObject> houses = new List<HousePlacedObject>();
     private List<PlacedObject> placedObjects = new List<PlacedObject>();
+
+    [SerializeField] private List<NeighbothoodItemCount<PlacedObject>> itemCount = new List<NeighbothoodItemCount<PlacedObject>>();
 
     private void Awake()
     {
@@ -23,18 +26,62 @@ public class NeighborhoodController : MonoBehaviour
 
     private void Start()
     {
+        for (int i = 0; i < blockData.mandatoryBuildings.Length; i++)
+        {
+            int rand = Random.Range(0, blocks.Length);
+            bool hasBuilding = blocks[rand].Build(blockData.mandatoryBuildings[i], out PlacedObject b);
+            if (!hasBuilding)
+            {
+                i--;
+                continue;
+            }
+            AddNeighborhoodItem(b);
+        }
+
         for (int i = 0; i < initialBuildings; i++)
         {
             int rand = Random.Range(0, blocks.Length);
-            var b = blocks[rand].BuildRandom();
+            var building = blockData.GetRandomBlockItem(itemCount);
+            PlacedObject b;
+            bool hasBuilding = blocks[rand].Build(building.building, out b);
 
-            if (b is StorePlacedObject)
-                stores.Add((StorePlacedObject)b);
-            else if (b is HousePlacedObject)
-                houses.Add((HousePlacedObject)b);
-            else
-                placedObjects.Add(b);
+            if (!hasBuilding)
+            {
+                i--;
+                continue;
+            }
+
+            AddNeighborhoodItem(b);
         }
+    }
+
+    private void AddNeighborhoodItem(PlacedObject b)
+    {
+        var item = itemCount.Find(s => s.item.Equals(b));
+        if (item != null)
+        {
+            item.amount++;
+        }
+        else
+        {
+            itemCount.Add(new NeighbothoodItemCount<PlacedObject>
+            {
+                item = b,
+                amount = 1
+            });
+        }
+
+        if (b is StorePlacedObject)
+        {
+            stores.Add((StorePlacedObject)b);
+        }
+            
+        else if (b is HousePlacedObject)
+        {
+            houses.Add((HousePlacedObject)b);
+        }
+        else
+            placedObjects.Add(b);
     }
 
     public bool HasStoreOfColor(Bag.BagType color)
@@ -83,4 +130,11 @@ public class NeighborhoodController : MonoBehaviour
 
         return house;
     }
+}
+
+[System.Serializable]
+public class NeighbothoodItemCount<TItem>
+{
+    public TItem item;
+    public int amount;
 }

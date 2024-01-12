@@ -46,9 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63534a427d8a6fb4cbba7ad5387ec924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingTypeSO: {fileID: 0}
-  origin: {x: 0, y: 0}
-  dir: 0
+  gpsPoint: {fileID: 0}
 --- !u!1 &5834846927762370071
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,8 +75,8 @@ Transform:
   m_GameObject: {fileID: 5834846927762370071}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 4.5846567, y: 2.491661, z: -1.156129}
-  m_LocalScale: {x: 5.980005, y: 4.9833217, z: 13.288855}
+  m_LocalPosition: {x: 1.1574, y: 2.4917, z: -1.1561}
+  m_LocalScale: {x: 5.980005, y: 4.9833217, z: 6.4344635}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5571809419207975761}

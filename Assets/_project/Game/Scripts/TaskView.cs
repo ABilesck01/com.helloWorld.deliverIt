@@ -17,16 +17,25 @@ public class TaskView : MonoBehaviour
     private void OnEnable()
     {
         GameManager.OnNewTask += GameManager_OnNewTask;
+        GameManager.OnLostTask += GameManager_OnNewTask;
+        HousePlacedObject.OnTaskDelivered += HousePlacedObject_OnTaskDelivered;
     }
 
     private void OnDisable()
     {
         GameManager.OnNewTask -= GameManager_OnNewTask;
+        GameManager.OnLostTask -= GameManager_OnNewTask;
+        HousePlacedObject.OnTaskDelivered -= HousePlacedObject_OnTaskDelivered;
     }
 
     private void GameManager_OnNewTask(object sender, Task e)
     {
         //gameManager = (GameManager)sender;
+        UpdateTasks();
+    }
+
+    private void HousePlacedObject_OnTaskDelivered(object sender, HousePlacedObject e)
+    {
         UpdateTasks();
     }
 

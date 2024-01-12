@@ -40,4 +40,17 @@ public class PlacedObject : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    private bool Equals(PlacedObject other)
+    {
+        if (other == null)
+            return false;
+
+        return buildingTypeSO == other.buildingTypeSO;
+    }
+
+    public override bool Equals(object other)
+    {
+        return Equals(other as PlacedObject);
+    }
 }

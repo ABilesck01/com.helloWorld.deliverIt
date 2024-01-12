@@ -12,6 +12,7 @@ public class CarInventory : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private LayerMask storeLayer;
     [SerializeField] private LayerMask houseLayer;
+    [SerializeField] private LayerMask trashLayer;
     [SerializeField] private float radius = 2f;
     [Header("Visual")]
     [SerializeField] private Transform spawnPosition;
@@ -21,6 +22,7 @@ public class CarInventory : MonoBehaviour
 
     private StorePlacedObject store;
     private HousePlacedObject house;
+    private TrashPlacedObject trash;
 
     private CarController carController;
     private Transform t;
@@ -43,23 +45,23 @@ public class CarInventory : MonoBehaviour
         SwitchSearch();
         SearchForStore();
         SearchForHouse();
+        SearchForTrash();
     }
 
     private void SwitchSearch()
     {
-        if (Mathf.Abs(carController.GetInputVector().y) < 0.1f && !isSearching)
+        if (Mathf.Abs(carController.GetAccel()) < 0.1f && !isSearching)
         {
             isSearching = true;
-            Debug.Log("Search Started");
             progressSlider.value = 0;
         }
-        if(Mathf.Abs(carController.GetInputVector().y) > 0.1f && isSearching)
+        if(Mathf.Abs(carController.GetAccel()) > 0.1f && isSearching)
         {
             isSearching = false;
             store = null;
             house = null;
+            trash = null;
             currentTimeToFill = 0;
-            Debug.Log("Search Stoped");
             progressSlider.gameObject.SetActive(false);
             progressSlider.value = 0;
         }
@@ -133,7 +135,7 @@ public class CarInventory : MonoBehaviour
         progressSlider.gameObject.SetActive(true);
         currentTimeToFill += Time.deltaTime;
         progressSlider.value = currentTimeToFill;
-        if (currentTimeToFill > timeToFill)
+        if (currentTimeToFill >= timeToFill)
         {
             currentTimeToFill = 0;
             //bags.Add(store.GetBag());
@@ -153,6 +155,42 @@ public class CarInventory : MonoBehaviour
             UpdateBagsInInventory();
         }
     }
+
+    private void SearchForTrash()
+    {
+        if (!isSearching)
+        {
+            return;
+        }
+
+        if (trash == null)
+        {
+            Collider[] trashes = Physics.OverlapSphere(t.position, radius, trashLayer);
+            if (trashes.Length <= 0)
+            {
+                return;
+            }
+            trash = trashes[0].GetComponentInParent<TrashPlacedObject>();
+            currentTimeToFill = 0;
+        }
+
+        if (bags.Count <= 0)
+        {
+            return;
+        }
+
+        progressSlider.gameObject.SetActive(true);
+        currentTimeToFill += Time.deltaTime;
+        progressSlider.value = currentTimeToFill;
+        if (currentTimeToFill >= timeToFill)
+        {
+            bags.RemoveAt(0);
+            progressSlider.gameObject.SetActive(false);
+            progressSlider.value = 0;
+            UpdateBagsInInventory();
+        }
+    }
+
 
     private void UpdateBagsInInventory()
     {

@@ -27,15 +27,15 @@ public class CarGps : MonoBehaviour
     private void OnEnable()
     {
         GameManager.OnNewTask += GameManager_OnNewTask;
+        GameManager.OnLostTask += GameManager_OnLostTask;
         CarInventory.OnUpdateInventory += CarInventory_OnUpdateInventory;
         HousePlacedObject.OnTaskDelivered += HousePlacedObject_OnTaskDelivered;
     }
 
-    
-
     private void OnDisable()
     {
         GameManager.OnNewTask -= GameManager_OnNewTask;
+        GameManager.OnLostTask -= GameManager_OnLostTask;
         CarInventory.OnUpdateInventory -= CarInventory_OnUpdateInventory;
         HousePlacedObject.OnTaskDelivered -= HousePlacedObject_OnTaskDelivered;
     }
@@ -94,6 +94,12 @@ public class CarGps : MonoBehaviour
             target = GetNearestTransform(neighborhoodController.GetStoreListOfColor(e.Type));
         }
 
+    }
+
+    private void GameManager_OnLostTask(object sender, Task e)
+    {
+        target = null;
+        arrow.gameObject.SetActive(false);
     }
 
     private void CarInventory_OnUpdateInventory(object sender, Bag e)

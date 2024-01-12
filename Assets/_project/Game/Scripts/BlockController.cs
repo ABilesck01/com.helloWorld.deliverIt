@@ -4,7 +4,6 @@ using UnityEngine;
 public class BlockController : MonoBehaviour
 {
     [SerializeField] private Transform origin;
-    [SerializeField] private BlockData blockData;
     private Grid<GridObject> grid;
 
     private void Awake()
@@ -13,29 +12,30 @@ public class BlockController : MonoBehaviour
             (Grid<GridObject> g, int x, int z) => new GridObject(g, x, z), true);
     }
 
-    private void Start()
-    {
-        //BuildAtPosition(Vector2Int.zero, buildingType, BuildingType.Dir.Down);
-    }
-
     [ContextMenu("Build random")]
-    public PlacedObject BuildRandom()
+    public bool Build(BuildingType building, out PlacedObject placedObject)
     {
-        int building = Random.Range(0, blockData.possibleBuildings.Length);
-
-        int firstNumber = 0;
-        int secondNumber = 0;
-        BuildingType.Dir direction;
-
-        do
+        try
         {
-            building = Random.Range(0, blockData.possibleBuildings.Length);
-            GetRandomPosition(blockData.possibleBuildings[building], out firstNumber, out secondNumber, out direction);
+            int firstNumber = 0;
+            int secondNumber = 0;
+            BuildingType.Dir direction;
+
+            GetRandomPosition(building, out firstNumber, out secondNumber, out direction);
+            if (!VerifyBuild(new Vector2Int(firstNumber, secondNumber), building, direction))
+            {
+                placedObject = null;
+                return false;
+            }
+
+            placedObject = BuildAtPosition(new Vector2Int(firstNumber, secondNumber), building, direction);
+            return true;
         }
-        while(!VerifyBuild(new Vector2Int(firstNumber, secondNumber), blockData.possibleBuildings[building], direction));
-
-
-        return BuildAtPosition(new Vector2Int(firstNumber, secondNumber), blockData.possibleBuildings[building], direction);
+        catch 
+        {
+        }
+        placedObject = null;
+        return false;
     }
 
     private void GetRandomPosition(BuildingType building, out int width, out int height, out BuildingType.Dir dir)

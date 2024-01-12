@@ -12,12 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61d6332d93f2bc4a8e1b3272bc642ed, type: 3}
   m_Name: block 1
   m_EditorClassIdentifier: 
+  mandatoryBuildings:
+  - {fileID: 11400000, guid: 4a58de072b7e1384ca57f32116c2a879, type: 2}
+  - {fileID: 11400000, guid: 754585b6a31217a46bef16fda18d3b42, type: 2}
   possibleBuildings:
-  - {fileID: 11400000, guid: 138c118da5cf58c46a30fbeb284ab7b1, type: 2}
-  - {fileID: 11400000, guid: c55d35cd52b26dc46a0b929bdf4c9c4a, type: 2}
-  - {fileID: 11400000, guid: 138c118da5cf58c46a30fbeb284ab7b1, type: 2}
-  - {fileID: 11400000, guid: c55d35cd52b26dc46a0b929bdf4c9c4a, type: 2}
-  - {fileID: 11400000, guid: 4a58de072b7e1384ca57f32116c2a879, type: 2}
-  - {fileID: 11400000, guid: 754585b6a31217a46bef16fda18d3b42, type: 2}
-  - {fileID: 11400000, guid: 4a58de072b7e1384ca57f32116c2a879, type: 2}
-  - {fileID: 11400000, guid: 754585b6a31217a46bef16fda18d3b42, type: 2}
+  - building: {fileID: 11400000, guid: 138c118da5cf58c46a30fbeb284ab7b1, type: 2}
+    weight: 7
+    maxPossibleBuilding: 0
+  - building: {fileID: 11400000, guid: c55d35cd52b26dc46a0b929bdf4c9c4a, type: 2}
+    weight: 6
+    maxPossibleBuilding: 0
+  - building: {fileID: 11400000, guid: 87f81724553912d478ae7eafd8f8e72f, type: 2}
+    weight: 2
+    maxPossibleBuilding: 0
+  - building: {fileID: 11400000, guid: a7ee335e2cf078a4faf1909316d3816f, type: 2}
+    weight: 3
+    maxPossibleBuilding: 0
+  - building: {fileID: 11400000, guid: 66cf00e25b8964542af6d2c1456b9d78, type: 2}
+    weight: 5
+    maxPossibleBuilding: 0
+  - building: {fileID: 11400000, guid: 367358435213280468636b09d3f90835, type: 2}
+    weight: 9
+    maxPossibleBuilding: 0
+  - building: {fileID: 11400000, guid: 8c387a1321e79a040af2e472d2901f03, type: 2}
+    weight: 8
+    maxPossibleBuilding: 0
+  - building: {fileID: 11400000, guid: 9693f194fd8f5af4ab3bc8c33b77e834, type: 2}
+    weight: 2
+    maxPossibleBuilding: 0
