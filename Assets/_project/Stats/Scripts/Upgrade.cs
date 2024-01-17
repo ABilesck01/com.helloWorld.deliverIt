@@ -9,7 +9,6 @@ public class Upgrade : ScriptableObject
     public Transform visual;
     public int cost;
     public SerializableDictionary<Stat, float> statsToAply;
-    public float value;
     public bool isPercentage;
     public Upgrade replacement;
 }

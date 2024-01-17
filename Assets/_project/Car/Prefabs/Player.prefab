@@ -62,19 +62,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CarInputs, Assembly-CSharp
-        m_MethodName: GetMoveInputs
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 8043a0c7-d037-4a9f-b9d3-985072ff1c71
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
@@ -118,11 +106,55 @@ MonoBehaviour:
     m_ActionId: 5d46dad2-59a1-4c0d-8486-5db10b7f47c3
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5220660529852002417}
+        m_TargetAssemblyTypeName: CarInputs, Assembly-CSharp
+        m_MethodName: GetAcceleratorInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: d7941110-5ad2-41ce-ab80-304b8fcf22f1
     m_ActionName: Player/Join[/Keyboard/space,/DualShock4GamepadHID/buttonSouth,/XInputControllerWindows/buttonSouth,/Keyboard/enter]
-  m_NeverAutoSwitchControlSchemes: 1
-  m_DefaultControlScheme: 
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5220660529852002417}
+        m_TargetAssemblyTypeName: CarInputs, Assembly-CSharp
+        m_MethodName: GetSteeringWheelInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9a345b36-94bc-42ad-9124-b7ee9dc509ab
+    m_ActionName: Player/Accelerator1
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5220660529852002417}
+        m_TargetAssemblyTypeName: CarInputs, Assembly-CSharp
+        m_MethodName: GetSelectInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 56ee7774-3f02-44f7-97fc-0b171ed1ef8c
+    m_ActionName: Player/Select[/Keyboard/space,/Keyboard/enter]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 4247989620747193609}
@@ -138,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94735dbae1ffe35418edcc198face447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursor: {fileID: 7694955739552395875}
 --- !u!1001 &2931776353305539102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -598,6 +631,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 8986209940263457167, guid: 5788d7fbc70239a4aa5862b7089d9052, type: 3}
+      propertyPath: m_Drag
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986209940263457167, guid: 5788d7fbc70239a4aa5862b7089d9052, type: 3}
+      propertyPath: m_Mass
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986209940263457167, guid: 5788d7fbc70239a4aa5862b7089d9052, type: 3}
+      propertyPath: m_AngularDrag
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8079482866182607806, guid: 5788d7fbc70239a4aa5862b7089d9052, type: 3}
     m_RemovedGameObjects: []
@@ -609,6 +654,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7993125715336794221, guid: 5788d7fbc70239a4aa5862b7089d9052, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3473728223246790601}
+    - targetCorrespondingSourceObject: {fileID: 7993125715336794221, guid: 5788d7fbc70239a4aa5862b7089d9052, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7694955739552395875}
+    - targetCorrespondingSourceObject: {fileID: 1724279926176902277, guid: 5788d7fbc70239a4aa5862b7089d9052, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1570609224814950789}
   m_SourcePrefab: {fileID: 100100000, guid: 5788d7fbc70239a4aa5862b7089d9052, type: 3}
 --- !u!1 &1058374999108461965 stripped
 GameObject:
@@ -649,6 +700,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7694955739552395875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058374999108461965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70f40a6bed7ed340b97fabdf93705b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carController: {fileID: 0}
 --- !u!4 &4731928572966077265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2447280877896021681, guid: 5788d7fbc70239a4aa5862b7089d9052, type: 3}
@@ -669,8 +733,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2447280877896021687, guid: 5788d7fbc70239a4aa5862b7089d9052, type: 3}
   m_PrefabInstance: {fileID: 6943797500183786976}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5964787951262336038 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3646363190657724870, guid: 5788d7fbc70239a4aa5862b7089d9052, type: 3}
+  m_PrefabInstance: {fileID: 6943797500183786976}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058374999108461965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c6720c829559342984ad16a86b2347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7424544895715203307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 528076982411881739, guid: 5788d7fbc70239a4aa5862b7089d9052, type: 3}
   m_PrefabInstance: {fileID: 6943797500183786976}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8624547752022333797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1724279926176902277, guid: 5788d7fbc70239a4aa5862b7089d9052, type: 3}
+  m_PrefabInstance: {fileID: 6943797500183786976}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1570609224814950789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8624547752022333797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70f40a6bed7ed340b97fabdf93705b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carController: {fileID: 5964787951262336038}

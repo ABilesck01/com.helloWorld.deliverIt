@@ -6,6 +6,7 @@ public class CarInputs : MonoBehaviour
     private Vector2 moveInputs;
     private float accel;
     private float steer;
+    [SerializeField] private OnWorldCursor cursor;
 
     public void GetAcceleratorInput(InputAction.CallbackContext context)
     {
@@ -15,6 +16,14 @@ public class CarInputs : MonoBehaviour
     public void GetSteeringWheelInput(InputAction.CallbackContext context)
     {
         steer = context.ReadValue<float>();
+    }
+
+    public void GetSelectInput(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            cursor.TryInteract();
+        }
     }
 
     private void Start()

@@ -66995,18 +66995,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2082982298253255791, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_Drag
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2082982298253255791, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_Mass
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 2082982298253255791, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_AngularDrag
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5964787951262336038, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
       propertyPath: brake
       value: 8
@@ -67072,88 +67060,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Gamepad
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_ActionId
-      value: 1a4d5658-fb8a-4da5-a25a-b0beb9f9b6d3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
-      value: 9a345b36-94bc-42ad-9124-b7ee9dc509ab
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_ActionName
-      value: Player/New action
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
-      value: Player/Accelerator1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1308405620}
     - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1308405620}
     - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GetAcceleratorInput
       objectReference: {fileID: 0}
     - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GetSteeringWheelInput
       objectReference: {fileID: 0}
     - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CarInputs, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CarInputs, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
-      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7841709379565545243, guid: 9a31cf720ec618b489aee91d8a4bbcbc, type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

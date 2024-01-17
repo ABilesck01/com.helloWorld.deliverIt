@@ -51,6 +51,8 @@ public class CarController : MonoBehaviour
 
     public Rigidbody GetMotor() => carPhysics.motor;
 
+    public StatAsset GetStatAsset() => carStats;
+
     public void SetMoveFunc(Func<float> accel, Func<float> steer)
     {
         this.accel = accel;

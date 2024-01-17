@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42562cead4df60d4185b4fd108e9ed32, type: 3}
+  m_Name: betterMotor 2
+  m_EditorClassIdentifier: 
+  upgradeName: Better motor II
+  visual: {fileID: 419636, guid: 3b06f68f75b378244b5e5b50ba5efdc6, type: 3}
+  cost: 150
+  statsToAply:
+    values:
+    - key: 1
+      value: 4
+  isPercentage: 0
+  replacement: {fileID: 11400000, guid: b9af2086f32a4db4c8cfeadf93ca8f0c, type: 2}
